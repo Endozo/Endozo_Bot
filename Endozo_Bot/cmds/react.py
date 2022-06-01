@@ -15,8 +15,12 @@ class React(Cog_Extension):
         await ctx.send(file = picture)
 
     @commands.command()
-    async def yes(sekf, ctx):
+    async def yes(self, ctx):
         await ctx.send("yeah baby!")
+
+    @commands.command()
+    async def birthday(self, ctx):
+        await ctx.send("Happy birthday!")
 
 def setup(bot):
     bot.add_cog(React(bot))
