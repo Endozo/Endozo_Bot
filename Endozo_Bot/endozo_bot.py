@@ -13,18 +13,6 @@ bot = commands.Bot(command_prefix= '!')
 async def on_ready():
     print(">> Bot is online <<")
 
-@bot.event
-async def on_member_join(member):
-    print(f'{member} join!')
-    channel = bot.get_channel(int(jdata['Welcome_channel']))
-    await channel.send(f"{member} 從天而降!")
-
-@bot.event
-async def on_member_remove(member):
-    print(f'{member} remove!')
-    channel = bot.get_channel(int(jdata['Leave_channel']))
-    await channel.send(f"{member} 掉頭不回!")
-
 @bot.command()
 async def load(ctx, extension):
     bot.load_extension(f'cmds.{extension}')
